@@ -8,7 +8,7 @@
     </head>
 
     <body>
-        <form action="{{ url('store') }}"  method="post" enctype="multipart/form-data">
+        <form action="{{ url('huidiao') }}"  method="post" enctype="multipart/form-data">
             <input type="file" name="photo">
             <input type="submit" name="上传图片">
         </form>

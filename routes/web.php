@@ -20,3 +20,5 @@ Route::get('/','IndexController@index');
 Route::get('index','IndexController@index');
 
 Route::post('store','IndexController@store');
+
+Route::post('huidiao','IndexController@huiDiao');
