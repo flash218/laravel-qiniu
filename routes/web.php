@@ -24,3 +24,5 @@ Route::post('store','IndexController@store');
 Route::post('huidiao','IndexController@huiDiao');
 
 Route::get('show','IndexController@show');
+
+Route::get('del','IndexController@del');

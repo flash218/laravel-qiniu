@@ -142,4 +142,33 @@ class IndexController extends Controller
 
     }
 
+    /* 删除单个文件 */
+    public function del(Request $request){
+
+        // 需要填写你的 Access Key 和 Secret Key
+        $accessKey = "tTLlpx6-LU3ZjPFoj2DNQHNaYnwkWuqHsdsxNUFW";
+        $secretKey ="Jh9zphbpnXPt2PErYHVv2gqXGSqL4vB8J7VUxvfF";
+
+        //初始化Auth状态
+        $auth = new Auth($accessKey, $secretKey);
+
+        //初始化BucketManager
+        $bucketMgr = new BucketManager($auth);
+
+        //你要测试的空间， 并且这个key在你空间中存在
+        $bucket = 'test';
+
+        $key = $request->get('name');
+
+        //删除$bucket 中的文件 $key
+        $err = $bucketMgr->delete($bucket, $key);
+        echo "\n====> delete $key : \n";
+        if ($err !== null) {
+            var_dump($err);
+        } else {
+            echo "Success!";
+        }
+
+    }
+
 }
